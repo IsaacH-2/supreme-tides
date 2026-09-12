@@ -44,7 +44,7 @@ export default function CartPage() {
               Items you add to your cart will appear here.
             </p>
             <Link href="/shop" className="btn-primary mt-8">
-              Browse the Shop
+              Browse Research Peptides
             </Link>
           </div>
         </div>

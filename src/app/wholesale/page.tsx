@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import SpecificationTable from "@/components/SpecificationTable";
+import ResearchUseNotice from "@/components/ResearchUseNotice";
+import WholesaleCTA from "@/components/WholesaleCTA";
 
 export const metadata: Metadata = {
   title: "Wholesale | Supreme Tides",
 };
 
 const TIERS = [
-  { name: "Starter", detail: "For new retailers placing their first order." },
-  { name: "Growth", detail: "For established stores ordering regularly." },
-  { name: "Enterprise", detail: "For chains and distributors at scale." },
+  { name: "Starter Lab", detail: "For new research accounts placing their first order." },
+  { name: "Institutional", detail: "For universities and labs ordering on a recurring basis." },
+  { name: "Enterprise Research", detail: "For distributors and large-scale research programs." },
+];
+
+const REQUIREMENTS = [
+  "Business or institutional research account",
+  "Valid research-use justification on file",
+  "Signed research-use-only acknowledgment",
 ];
 
 export default function WholesalePage() {
@@ -17,8 +25,8 @@ export default function WholesalePage() {
     <>
       <PageHero
         eyebrow="Wholesale"
-        title="Partner With Supreme Tides"
-        description="Apply for a wholesale account to access bulk pricing, case-pack ordering, and a dedicated account manager."
+        title="Wholesale Research Accounts"
+        description="Apply for a wholesale research account to access volume pricing, bulk packaging, and a dedicated account manager."
       />
 
       <section className="section">
@@ -34,22 +42,43 @@ export default function WholesalePage() {
             ))}
           </div>
 
-          <div className="mt-14 flex flex-col items-start gap-4 rounded-2xl border border-slate-100 bg-brand-50/40 p-8 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-14 grid gap-10 md:grid-cols-2">
             <div>
               <h2 className="text-xl font-semibold text-slate-900">
-                Ready to apply?
+                Account Requirements
               </h2>
-              <p className="mt-1 text-sm text-slate-500">
-                Reach out and our wholesale team will follow up within one
-                business day.
-              </p>
+              <ul className="mt-4 space-y-2.5 text-sm text-slate-500">
+                {REQUIREMENTS.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="text-brand-600">&bull;</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <Link href="/contact" className="btn-primary shrink-0">
-              Contact Sales
-            </Link>
+            <ResearchUseNotice className="self-start">
+              Wholesale accounts are issued to qualified laboratories,
+              research institutions, and businesses. Products are not
+              intended for human or veterinary use, or for administration of
+              any kind.
+            </ResearchUseNotice>
           </div>
         </div>
       </section>
+
+      <section className="section border-t border-slate-100 bg-brand-50/30">
+        <div className="container-page">
+          <p className="eyebrow">Specifications</p>
+          <h2 className="mt-2 max-w-lg text-3xl font-semibold tracking-tight text-slate-900">
+            What a wholesale account includes.
+          </h2>
+          <div className="mt-10 max-w-2xl">
+            <SpecificationTable />
+          </div>
+        </div>
+      </section>
+
+      <WholesaleCTA />
     </>
   );
 }

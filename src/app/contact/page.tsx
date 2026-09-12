@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import ResearchUseNotice from "@/components/ResearchUseNotice";
+import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact | Supreme Tides",
@@ -11,7 +13,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Get In Touch"
-        description="Questions about an order, a wholesale account, or anything else — reach out and we'll get back to you."
+        description="Questions about a wholesale account, a Certificate of Analysis, or anything else — reach out and we'll get back to you."
       />
 
       <section className="section">
@@ -62,7 +64,7 @@ export default function ContactPage() {
                 name="subject"
                 type="text"
                 className="mt-2 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
-                placeholder="Wholesale account inquiry"
+                placeholder="Wholesale research account inquiry"
               />
             </div>
 
@@ -90,30 +92,26 @@ export default function ContactPage() {
           <div className="space-y-8">
             <div>
               <h3 className="text-sm font-semibold text-slate-900">Email</h3>
-              <p className="mt-1 text-sm text-slate-500">
-                hello@supremetides.com
-              </p>
+              <p className="mt-1 text-sm text-slate-500">{COMPANY.email}</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-slate-900">Phone</h3>
-              <p className="mt-1 text-sm text-slate-500">(555) 010-0100</p>
+              <p className="mt-1 text-sm text-slate-500">{COMPANY.phone}</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-slate-900">
                 Office
               </h3>
-              <p className="mt-1 text-sm text-slate-500">
-                123 Harbor Way, Suite 200
-                <br />
-                Long Beach, CA 90802
-              </p>
+              <p className="mt-1 text-sm text-slate-500">{COMPANY.address}</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-slate-900">Hours</h3>
-              <p className="mt-1 text-sm text-slate-500">
-                Monday – Friday, 9am – 5pm PT
-              </p>
+              <p className="mt-1 text-sm text-slate-500">{COMPANY.hours}</p>
             </div>
+            <ResearchUseNotice>
+              Wholesale accounts are limited to qualified laboratories,
+              institutions, and businesses.
+            </ResearchUseNotice>
           </div>
         </div>
       </section>

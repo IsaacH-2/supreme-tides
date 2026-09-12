@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import ResearchUseNotice from "@/components/ResearchUseNotice";
+import MoleculeVisual from "@/components/MoleculeVisual";
 
 export const metadata: Metadata = {
   title: "About | Supreme Tides",
@@ -11,7 +13,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="Our Story"
-        description="Supreme Tides was built to give retailers a dependable wholesale partner — quality product, fair pricing, and straightforward service."
+        description="Supreme Tides was built to give research institutions and laboratories a dependable wholesale partner for research-use-only materials."
       />
 
       <section className="section">
@@ -19,15 +21,19 @@ export default function AboutPage() {
           <div className="space-y-4 text-slate-600">
             <p>
               Company history and mission content goes here. This section
-              will introduce the Supreme Tides story, values, and what sets
-              the brand apart.
+              will introduce the Supreme Tides story, values, and commitment
+              to quality and compliance.
             </p>
             <p>
-              A second paragraph can cover the team, sourcing philosophy, or
-              milestones as the content is finalized.
+              A second paragraph can cover sourcing standards, testing
+              partners, or company milestones as the content is finalized.
             </p>
+            <ResearchUseNotice>
+              Supreme Tides serves laboratories and qualified research
+              organizations exclusively.
+            </ResearchUseNotice>
           </div>
-          <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-brand-100 to-brand-50" />
+          <MoleculeVisual />
         </div>
       </section>
     </>

@@ -14,7 +14,7 @@
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-6xl px-6;
+    @apply mx-auto w-full max-w-[1320px] px-6;
   }
 
   .section {
@@ -26,14 +26,30 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-brand-700 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full bg-brand-700 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-brand-800 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-200 bg-white px-6 py-3 text-sm font-medium text-brand-800 transition hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full border border-brand-200 bg-white px-6 py-3 text-sm font-medium text-brand-800 transition hover:-translate-y-0.5 hover:bg-brand-50 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+  }
+
+  .btn-primary-inverse {
+    @apply inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-brand-800 transition hover:-translate-y-0.5 hover:bg-brand-50 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-800;
+  }
+
+  .btn-secondary-inverse {
+    @apply inline-flex items-center justify-center rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-800;
   }
 
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.2em] text-brand-600;
+  }
+
+  .disclaimer-banner {
+    @apply rounded-xl border border-brand-100 bg-brand-50/60 px-5 py-4 text-sm text-slate-600;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-brand-700;
   }
 }

@@ -1,38 +1,32 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import ProductCard from "@/components/ProductCard";
+import ProductGrid from "@/components/ProductGrid";
+import ResearchUseNotice from "@/components/ResearchUseNotice";
+import { PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Shop | Supreme Tides",
+  title: "Research Peptides | Supreme Tides",
 };
-
-const PRODUCTS = [
-  { slug: "wave-tee-bulk-case", name: "Wave Tee — Bulk Case", category: "Apparel" },
-  { slug: "tide-tote-bag", name: "Tide Tote Bag", category: "Accessories" },
-  { slug: "coastal-cap-pack", name: "Coastal Cap Pack", category: "Headwear" },
-  { slug: "harbor-hoodie-case", name: "Harbor Hoodie — Case", category: "Apparel" },
-  { slug: "reef-crewneck-case", name: "Reef Crewneck — Case", category: "Apparel" },
-  { slug: "current-crossbody", name: "Current Crossbody Bag", category: "Accessories" },
-  { slug: "shoreline-bucket-hat", name: "Shoreline Bucket Hat", category: "Headwear" },
-  { slug: "swell-socks-pack", name: "Swell Socks — 6 Pack", category: "Accessories" },
-];
 
 export default function ShopPage() {
   return (
     <>
       <PageHero
         eyebrow="Catalog"
-        title="Shop the Collection"
-        description="Browse our full range of wholesale-ready product. Case quantities and bulk pricing available on every item."
+        title="Research Peptides"
+        description="Browse our wholesale catalog of research-grade peptides. Volume pricing and documentation available for qualified research accounts."
       />
+
+      <div className="container-page pt-10">
+        <ResearchUseNotice>
+          Products listed here are intended for laboratory research purposes
+          only and are not for human or veterinary use.
+        </ResearchUseNotice>
+      </div>
 
       <section className="section">
         <div className="container-page">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {PRODUCTS.map((product) => (
-              <ProductCard key={product.slug} {...product} />
-            ))}
-          </div>
+          <ProductGrid products={PRODUCTS} />
         </div>
       </section>
     </>

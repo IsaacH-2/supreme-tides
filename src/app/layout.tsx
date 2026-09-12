@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ResearcherVerificationModal from "@/components/ResearcherVerificationModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Supreme Tides | Wholesale",
+  title: "Supreme Tides | Research Use Only",
   description:
-    "Supreme Tides is a wholesale supplier of quality goods for retailers.",
+    "Supreme Tides is a B2B wholesale supplier of research-use-only laboratory materials for qualified research institutions and laboratories.",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ResearcherVerificationModal />
       </body>
     </html>
   );

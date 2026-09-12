@@ -4,44 +4,19 @@ export default function Logo() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2 text-slate-900"
+      className="flex items-center gap-2.5"
       aria-label="Supreme Tides home"
     >
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <circle cx="16" cy="16" r="16" className="fill-brand-700" />
-        <path
-          d="M5 13c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"
-          stroke="white"
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M5 18c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"
-          stroke="white"
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          fill="none"
-          opacity="0.6"
-        />
-        <path
-          d="M5 23c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"
-          stroke="white"
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          fill="none"
-          opacity="0.3"
-        />
-      </svg>
-      <span className="text-lg font-semibold tracking-tight">
-        Supreme Tides
+      <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-700 text-sm font-bold text-white">
+        S
+      </span>
+      <span className="flex flex-col leading-none">
+        <span className="text-sm font-semibold tracking-tight text-slate-900">
+          Supreme Tides
+        </span>
+        <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+          Research Use Only
+        </span>
       </span>
     </Link>
   );
