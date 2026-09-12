@@ -1,15 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Logo() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2.5"
+      className="flex items-center gap-3"
       aria-label="Supreme Tides home"
     >
-      <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-700 text-sm font-bold text-white">
-        S
-      </span>
+      <Image
+        src="/logo.png"
+        alt="Supreme Tides"
+        width={64}
+        height={52}
+        priority
+        className="h-11 w-auto"
+      />
       <span className="flex flex-col leading-none">
         <span className="text-sm font-semibold tracking-tight text-slate-900">
           Supreme Tides
